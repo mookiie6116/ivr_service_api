@@ -1,0 +1,13 @@
+{
+  "ver" : 0.1,
+  "port" : "9005",
+  "service_database" : {
+    "user": "ui_user",
+    "password": "Terr@b!tP@ssw0rd",
+    "server": "172.18.8.1",
+    "database": "config_tn02",
+    "options": {
+        "encrypt": true 
+    }
+  }
+}
