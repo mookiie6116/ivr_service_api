@@ -9,8 +9,16 @@ var urlencodedParser = bodyParser.urlencoded({
 });
 
 router.get("/:id", urlencodedParser, function (req, res, next) {
-  let id = req.params.id
+  let id = parseInt(req.params.id)
   let sql = `exec spGetServiceLists ${id}`
+  service.query(sql, function (response) {
+    res.status(200).json(response)
+  })
+})
+
+router.get("/id/:id", urlencodedParser, function (req, res, next) {
+  let id = parseInt(req.params.id)
+  let sql = `SELECT Service_Id, Service_c FROM Service WHERE Service_Id = ${id}`
   service.query(sql, function (response) {
     res.status(200).json(response)
   })
